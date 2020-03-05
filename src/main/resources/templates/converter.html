@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <title>Converter</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+</head>
+<body >
+<h1 align="center">JSON to YAML Converter </h1>
+
+<form action="#" th:action="@{/userInputJson}" th:object="${userInputJson}" method="post">
+    <div class="textAreaColumn" style="height=100%; width:100%">
+
+        <table style="height=100%; width:100%">
+            <tr>
+                <td width="45%" align="left">JSON INPUT</td>
+                <td align="center"></td>
+                <td width="45%"align="left">YAML OUTPUT</td>
+            </tr>
+            <tr>
+                <td width="45%" align="left"><textarea name="json" placeholder="Enter JSON here..." required th:text="${json}" style=" !important;height:700px !important;"></textarea></td>
+                <td align="center"><input type="submit" value="Convert" style='width:auto;'></td>
+                <td width="45%" align="right"><textarea name="yaml" placeholder="YAML output will be here..." th:text="${yaml}" style=" !important;height:700px !important;"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="reset" value="Clear" style="width: auto"></td>
+                <td></td>
+                <td align="right"><a class="btn" href="http://localhost:8080/">Reset</a></td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>
